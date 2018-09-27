@@ -1,6 +1,8 @@
 <h2>Editing "<%= @post.title %>"</h2>
 <%= form_tag post_path(@post), method: "patch" do %>
-  <div class="field">
+  <% if @post.errors.any? %>
+  <div id="error_explanation">
+    <h2>There are some errors:</h2>
     <%= label_tag "title", "Title" %>
     <%= text_field_tag "title", @post.title %>
   </div>
