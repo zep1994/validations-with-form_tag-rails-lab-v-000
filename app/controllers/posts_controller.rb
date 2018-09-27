@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_aciton :find!, only: [:show, :edit, :update]
+  before_action :find!, only: [:show, :edit, :update]
   def show
     @post = Post.find(params[:id])
   end
@@ -9,8 +9,9 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post.update(post_params)
     if @post.valid?
-      redirect_to post_path(@post)
+      redirect_to post_path(@post.id)
     else 
       render :edit
     end
