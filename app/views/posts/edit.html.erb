@@ -3,6 +3,11 @@
   <% if @post.errors.any? %>
   <div id="error_explanation">
     <h2>There are some errors:</h2>
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+      <li> <%= message %> 
+      <% end %> 
+    </ul>
     <%= label_tag "title", "Title" %>
     <%= text_field_tag "title", @post.title %>
   </div>
