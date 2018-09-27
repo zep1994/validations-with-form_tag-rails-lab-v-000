@@ -16,12 +16,12 @@
     <%= text_field_tag "name", @author.name %>
   </div>
 
-  <div class="field">
+  <div class="field <%= ' field_with_errors' if @post.errors[:title].any? %>">
     <%= label_tag "email", "Email" %>
     <%= text_field_tag "email", @author.email %>
   </div>
 
-  <div class="field">
+  <div class="field <%= ' field_with_errors' if @post.errors[:title].any? %>">
     <%= label_tag "phone_number", "Phone Number" %>
     <%= text_field_tag "phone_number", @author.phone_number %>
   </div>
