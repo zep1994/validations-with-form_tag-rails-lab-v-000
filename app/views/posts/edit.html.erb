@@ -5,9 +5,11 @@
     <h2>There are some errors:</h2>
     <ul>
       <% @post.errors.full_messages.each do |message| %>
-      <li> <%= message %> 
-      <% end %> 
+      <li> <%= message %>
+      <% end %>
     </ul>
+  </div>
+  <% end %>
     <%= label_tag "title", "Title" %>
     <%= text_field_tag "title", @post.title %>
   </div>
@@ -29,4 +31,3 @@
   </div>
   <%= submit_tag "Update" %>
 <% end %>
-
